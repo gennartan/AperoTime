@@ -1,5 +1,9 @@
+#!/bin/python3
+
+import sys
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+import uvicorn
 
 app = FastAPI()
 
@@ -22,3 +26,11 @@ The content of the document......
 </html> 
 """
 
+
+def main():
+    print("This is my main function")
+    uvicorn.run(app, host="127.0.0.1", port=8000)
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())
