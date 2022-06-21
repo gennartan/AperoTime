@@ -20,7 +20,7 @@ setup(
             'typing_extensions==4.2.0',
             'uvicorn==0.17.6'],
         entry_points={
-            'console_scripts':['apero = aperotime.__main__:main'],
+            'console_scripts':['apero = aperotime.aperotime:main'],
         },
     )
 
