@@ -39,16 +39,10 @@ def read_root():
         return {"aperotime": False}
 
 def main(host="127.0.0.1", port=8000):
-    uvicorn.run(app, host=host, port=port)
-    return 0
-
-if __name__ == '__main__':
-    host = "127.0.0.1"
-    port = 8000
 
     parser = argparse.ArgumentParser(description="Aperotime server")
-    parser.add_argument("--host", metavar="host", type=str, help="host address", default=host)
-    parser.add_argument("--port", metavar="port", type=int, help="port", default=port)
+    parser.add_argument("--host", metavar='host', type=str, help="host address", default=host)
+    parser.add_argument("--port", metavar='port', type=int, help="port", default=port)
 
     args = parser.parse_args()
     if args.host is not None:
@@ -56,5 +50,10 @@ if __name__ == '__main__':
     if args.port is not None:
         port = args.port
 
-    sys.exit(main(host, port))
+    uvicorn.run(app, host=host, port=port)
+    return 0
+
+if __name__ == '__main__':
+
+    sys.exit(main())
 
